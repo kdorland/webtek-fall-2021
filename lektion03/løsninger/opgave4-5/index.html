@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flot grafik</title>
+  <script src="script.js"></script>
+  <style>
+    svg {
+      border: 2px solid black
+    }
+  </style>
+</head>
+<body> 
+
+  <svg id="grafik" width="500" height="500"></svg>
+
+  <script>
+    let offsetX = 0;
+    let offsetY = 0;
+    let scale = 1.0;
+
+    // Smiley 1
+    drawCircle(125 + offsetX, 200 + offsetY, 100 * scale, "black");
+    drawCircle(125 + offsetX, 225 + offsetY, 45, "white");
+    drawCircle(125 + offsetX, 215 + offsetY, 50, "black");
+    drawBox(100 + offsetX, 150 + offsetY, 20, 10, "white");
+    drawBox(150 + offsetX, 150 + offsetY, 20, 10, "white");
+    drawBox(80 + offsetX, 45 + offsetY, 70, 90, "black");
+    drawBox(50 + offsetX, 110 + offsetY, 5, 150, "black");
+    drawBox(82 + offsetX, 95 + offsetY, 15, 86, "white");
+
+    // Smiley 2
+    offsetX = 250;
+    drawCircle(125 + offsetX, 200 + offsetY, 100 * scale, "black");
+    drawCircle(125 + offsetX, 225 + offsetY, 45, "white");
+    drawCircle(125 + offsetX, 215 + offsetY, 50, "black");
+    drawBox(100 + offsetX, 150 + offsetY, 20, 10, "white");
+    drawBox(150 + offsetX, 150 + offsetY, 20, 10, "white");
+    drawBox(80 + offsetX, 45 + offsetY, 70, 90, "black");
+    drawBox(50 + offsetX, 110 + offsetY, 5, 150, "black");
+    drawBox(82 + offsetX, 95 + offsetY, 15, 86, "white");
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flot grafik</title>
+  <script src="script.js"></script>
+  <style>
+    svg {
+      border: 2px solid black
+    }
+  </style>
+</head>
+<body> 
+
+  <svg id="grafik" width="500" height="500"></svg>
+
+  <script>
+    //drawCircle(25, 25, 25, "green");
+
+    for (let x = 0; x < 10; x++) {
+      for (let y = 0; y < x + 1; y++) {
+        let offsetX = x * 50 + 25;
+        let offsetY = y * 50 + 25;
+        drawCircle(offsetX, offsetY, 25, "green");
+      }
+    }
+  </script>
+
+</body>
+</html>

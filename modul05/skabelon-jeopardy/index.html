@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>Jeopardy data</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  
+  <button onclick="run()">Kør programkoden!</button>
+  <br/>
+  <h3>Output:</h3>
+  <textarea id="output" rows="20" cols="80"></textarea>
+
+  <script>
+    skrivOutput("Tryk på knappen!");
+
+    // En funktion der bruges når der trykkes på knappen
+    function run() {
+
+      // *** Eksempler *** //
+
+      // Returner første Jeopardy-spørgsmål
+      function hentFørsteSpørgsmål() {
+        return jeopardy[0].question;
+      }
+
+      // Returner første jeopardy-svar
+      function hentFørsteSvar() {
+        return jeopardy[0].answer;
+      }
+
+      // Funktionens "return value" tilføjes til "output"
+      // Når man skriver "\n" i en string, betyder det linjeskift.
+      let output = "Question: " + hentFørsteSpørgsmål() + "\nAnswer: " + hentFørsteSvar();
+
+      // Nu skal output skrives på siden
+      skrivOutput(output);
+    }
+  </script>
+
+</body>
+</html>

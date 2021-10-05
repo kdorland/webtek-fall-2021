@@ -28,9 +28,15 @@
         return jeopardy[0].answer;
       }
 
+      // Alt data tilknyttet første spørgsmål
+      function hentHeleFørsteSpørgsmål() {
+        return jeopardy[0];
+      }
+
       // Funktionens "return value" tilføjes til "output"
       // Når man skriver "\n" i en string, betyder det linjeskift.
       let output = "Question: " + hentFørsteSpørgsmål() + "\nAnswer: " + hentFørsteSvar();
+      output = output + "\n\n" + JSON.stringify(hentHeleFørsteSpørgsmål());
 
       // Nu skal output skrives på siden
       skrivOutput(output);

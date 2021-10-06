@@ -1,47 +1,37 @@
 <html>
+
 <head>
   <title>Jeopardy data</title>
-  <script src="script.js"></script>
+  <script src="d3.js"></script>
 </head>
+
 <body>
-  
-  <button onclick="run()">Kør programkoden!</button>
-  <br/>
-  <h3>Output:</h3>
-  <textarea id="output" rows="20" cols="80"></textarea>
-
   <script>
-    skrivOutput("Tryk på knappen!");
+    // Loader jeopardy-data og gør det tilgængeligt
+    d3.json("JEOPARDY_QUESTIONS.json").then(function(data) {
+      let jeopardy = data;
 
-    // En funktion der bruges når der trykkes på knappen
-    function run() {
+      // Tag spørgsmål nr. 442
+      let nr = 442;
+      let spørgsmål = jeopardy[nr];
 
-      // *** Eksempler *** //
+      // DEBUG: Udskriver lige hele spørgsmåls-objeket til browser-console
+      console.log(spørgsmål);
 
-      // Returner første Jeopardy-spørgsmål
-      function hentFørsteSpørgsmål() {
-        return jeopardy[0].question;
-      }
+      // Indsæt overskrift på siden:
+      d3.select("body").append("h2").text(`Jeopardy - Spørgsmål ${nr}`);
 
-      // Returner første jeopardy-svar
-      function hentFørsteSvar() {
-        return jeopardy[0].answer;
-      }
+      // Indsæt kategori på siden:
+      d3.select("body").append("p").text(spørgsmål.category);
 
-      // Alt data tilknyttet første spørgsmål
-      function hentHeleFørsteSpørgsmål() {
-        return jeopardy[0];
-      }
+      // Indsæt "spørgsmål":
+      d3.select("body").append("p").text(spørgsmål.question);
 
-      // Funktionens "return value" tilføjes til "output"
-      // Når man skriver "\n" i en string, betyder det linjeskift.
-      let output = "Question: " + hentFørsteSpørgsmål() + "\nAnswer: " + hentFørsteSvar();
-      output = output + "\n\n" + JSON.stringify(hentHeleFørsteSpørgsmål());
-
-      // Nu skal output skrives på siden
-      skrivOutput(output);
-    }
+      // Indsæt "svar":
+      d3.select("body").append("p").text(spørgsmål.answer);
+    });
   </script>
 
 </body>
+
 </html>

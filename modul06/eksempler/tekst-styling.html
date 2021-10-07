@@ -13,6 +13,7 @@
         .enter()
         .append("p")
         .text(function(d) {
+          // Datapunktet indgår i den tekst der indsættes - to steder!
           return `${d} gange 100 er ${d * 100}`
         })
         .style("color", function(d) {

@@ -26,18 +26,18 @@
       .data(dataset)
       .enter()
       .append("circle")
-      // 'd' er datapunktet
-      // 'i' er index i datasættet
+      // `d` er datapunktet
+      // `i` er index i datasættet
       .attr("cx", function (d, i) {
-        // Alle cirkler har centrum i x = 50
+        // Alle cirkler har centrum i `x = 50`
         return 50;
       })
       .attr("cy", function (d, i) {
-        // Cirklernes y-koordinat for centrum vokser med 'i'
+        // Cirklernes y-koordinat for centrum vokser med `i`
         return 50 + i * 80;
       })
       .attr("r", function (d) {
-        // Radius afhænger af datapunktet 'd'
+        // Radius afhænger af datapunktet `d`
         return d * 2;
       })
       // Farve alle cirkler orange

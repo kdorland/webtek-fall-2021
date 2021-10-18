@@ -42,7 +42,7 @@
       .enter()
       .append("circle") // <-- Før var det 'rect'
       .attr("cx", function(d) {
-        // 'd' er et sæt koordinater på formen [x, y]
+        // 'd' er et koordinat på formen [x, y]
         return d[0]; // Første værdi i indre array (x)
       })
       .attr("cy", function(d) {

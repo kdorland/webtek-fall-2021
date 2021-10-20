@@ -10,11 +10,11 @@
 </head>
 
 <body>
-  <h1>Farvede søjler!</h1>
+  <h1>Sorter søjlerne efter højde!</h1>
 
-  <button id="klik_sorter"><b>Tryk her for at sortere farver!</b></button>
+  <button id="klik_sorter"><b>Tryk her for at sortere søjler!</b></button>
 
-  <p>Reload siden for ny data</p>
+  <p>Genindlæs siden for ny data</p>
 
   <script type="text/javascript">
     const maxValue = 100;
@@ -49,17 +49,18 @@
       dataset.push(randomData(i));
     }
 
-    // En scaleBand benytter kun et endeligt sæt værdier, modsat et interval
+    // En scaleBand benytter sig af ordenstal i stedet for et interval af tal
     const xScale = d3.scaleBand()
       // Domænet er alle værdier på plads nr. 2 i hvert indre array
       // Husk, domænet består kun af 20 tal - hverken mere eller mindre
+      // Så domænet er præcist 20 tal, i en bestemt rækkefølge.
       .domain(dataset.map(function (d) { return d[1] }))
       // Output-området er fra 0 til 'w'
       .range([0, w])
       // Vi sætter padding imellem søjlerne også
       .paddingInner(0.05);
 
-    // Traditionel skaleringsfunktion for 'y' - ligner noget fra tidligere
+    // Traditionel skaleringsfunktion for 'y'.
     const yScale = d3.scaleLinear()
       .domain([0, maxValue])
       .range([0, h]);

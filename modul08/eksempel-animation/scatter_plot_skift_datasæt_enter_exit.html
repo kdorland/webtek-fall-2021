@@ -76,7 +76,7 @@
         const updateSelection = svg.selectAll("circle")
           .data(nyData);
           
-        // Animer de nye punkter
+        // Append `circle` og sæt attributter på de nye punkter
         updateSelection.enter()
           .append("circle")
           .attr("cx", function (d) {
@@ -108,7 +108,7 @@
           .transition()
           .duration(400)
           .ease(d3.easeQuadOut)
-          .attr("r", 20) // Flytter søjlen ud til højre
+          .attr("r", 20) // Cirklen gøres større
           .remove(); // 'circle' slettes  
       });
 

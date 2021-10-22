@@ -48,6 +48,8 @@
     for (let i = 0; i < 20; i++) {
       dataset.push(randomData(i));
     }
+    console.log(dataset);
+    console.log(JSON.stringify(dataset));
 
     // En scaleBand benytter sig af ordenstal i stedet for et interval af tal
     const xScale = d3.scaleBand()

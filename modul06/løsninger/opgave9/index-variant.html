@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jeopardy data</title>
+  <script src="d3.js"></script>
+</head>
+
+<body>
+  <script>
+    // Loader jeopardy-data og gør det tilgængeligt
+    d3.json("JEOPARDY_QUESTIONS.json").then(function (data) {
+      let jeopardy = data;
+      console.log(jeopardy[0]);
+      console.log(jeopardy[0].air_date.substring(0,4));
+
+      
+      // Opsamle årstal
+      const alleÅrstal = [];
+      let opsamling = [];
+      for (let question of data) {
+        const år = question.air_date.substring(0,4);
+        if (!alleÅrstal.includes(år)) {
+          alleÅrstal.push(år);
+          opsamling.push(0);
+        }
+      }
+      console.log(alleÅrstal);
+
+      // 2004, 2005, 2006, 2007
+
+      for (let question of data) {
+        const year = question.air_date.substring(0,4);
+
+        for (let i = 0; i < alleÅrstal.length; i++) {
+          if (year === alleÅrstal[i]) {
+            opsamling[i] = opsamling[i] + 1;
+          } 
+        }
+
+        /*
+        if (year === "1995") {
+          opsamling[0] = opsamling[0] + 1;
+        } else if (year === "2005") {
+          opsamling[1] = opsamling[1] + 1;
+        } else if (year === "2006") {
+          opsamling[2] = opsamling[2] + 1;
+        } else if (year === "2007") {
+          opsamling[3] = opsamling[3] + 1;
+        } 
+        */
+      }
+      console.log(opsamling);
+
+
+    });
+  </script>
+
+</body>
+
+</html>

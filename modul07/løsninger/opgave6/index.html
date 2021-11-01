@@ -21,13 +21,10 @@
     d3.csv("work-week-happiness-population.csv").then(function (dataset) {
 
       // TODO: Fix filtrering
-/*    let data = dataset.filter(function (row) {
-        if (row.hapiscore_whr_2017 != "" ||  
-            row.working_hours_per_week_2017 != "") return false;
+      let data = dataset.filter(function (row) {
+        if (row.hapiscore_whr_2017 === "" || row.working_hours_per_week_2017 === "") return false;
         else return true;
       });
-*/
-
 
       // Width og height
       const w = 500;

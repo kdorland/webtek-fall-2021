@@ -18,7 +18,16 @@
 
   <script type="text/javascript">
 
-    d3.csv("work-week-happiness-population.csv").then(function (data) {
+    d3.csv("work-week-happiness-population.csv").then(function (dataset) {
+
+      // TODO: Fix filtrering
+/*    let data = dataset.filter(function (row) {
+        if (row.hapiscore_whr_2017 != "" ||  
+            row.working_hours_per_week_2017 != "") return false;
+        else return true;
+      });
+*/
+
 
       // Width og height
       const w = 500;
@@ -48,7 +57,7 @@
 
       const yScale = d3.scaleLinear()
         .domain([0, maxY])
-        .range([0, h]);
+        .range([h, 0]);
 
       const rScale = d3.scaleLinear()
         .domain([0, maxR])

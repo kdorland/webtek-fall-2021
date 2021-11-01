@@ -22,8 +22,7 @@
 
       // TODO: Fix filtrering
       let data = dataset.filter(function (row) {
-        if (row.hapiscore_whr_2017 === "" || row.working_hours_per_week_2017 === "") return false;
-        else return true;
+        return row.hapiscore_whr_2017 !== "" && row.working_hours_per_week_2017 !== "";
       });
 
       // Width og height

@@ -20,7 +20,7 @@
 
     d3.csv("work-week-happiness-population.csv").then(function (dataset) {
 
-      // TODO: Fix filtrering
+      // Filtrering af data
       let data = dataset.filter(function (row) {
         return row.hapiscore_whr_2017 !== "" && row.working_hours_per_week_2017 !== "";
       });
